@@ -36,6 +36,9 @@ const highScore = document.getElementById('highScore');
 const reason = document.getElementById('reason');
 const achieve = document.getElementById('achievement');
 const presentScore = document.getElementById('presentScore');
+const coin = document.getElementById('coin');
+const wrong= document.getElementById('wrong');
+const error= document.getElementById('error');
 
 sg.addEventListener('change', () => snakeIncrement = Number(sg.value));
 ss.addEventListener('change',()=>snakeSpeed = Number(ss.value));
@@ -118,6 +121,7 @@ const addEventListenerForInputs=()=>{
 playyes.addEventListener('click',()=>{
     intro.style.zIndex=-2;
     addEventListenerForInputs();
+    jump.play();
 });
 
 //adding event listner for retry button
@@ -170,6 +174,7 @@ const thingsToDoInPlayField=()=>{
         let sElement = document.getElementById(identifier);
         sElement.style.left = snakeState[i][0]
         sElement.style.top = snakeState[i][1]
+
     }
     snakeState.pop();
     if (snakeState.length > 2) {
@@ -179,6 +184,7 @@ const thingsToDoInPlayField=()=>{
             overlay.style.zIndex = 3;
             achievement();
             reason.innerHTML = "snake ate it's own body";
+            error.play();
         }
     }
 
@@ -189,6 +195,7 @@ const thingsToDoOnHittingWall = ()=>{
     overlay.style.zIndex = 3;
     reason.innerHTML = 'you have hit the wall!!!';
     achievement();
+    wrong.play();
 }
 
 const OnRightKeyPress = () => {
@@ -288,6 +295,7 @@ const overlayDeactivate = () => {
     achieve.innerHTML="";
     overlay.style.zIndex = -5;
     initialPlayAdjust();
+    jump.play();
 }
 const createSnakeLinks =() => {
     let sBody = document.createElement('DIV');
@@ -307,6 +315,8 @@ const createSnakeLinks =() => {
     highScore.innerHTML = `HighScore:  ${Math.max(...scoreArr)}`;
     playField.appendChild(sBody,null);
     snakeState.push([sBody.style.left,sBody.style.top]);
+    coin.play();
+
     
 }
 const removeListenersForInputs =( )=>{
