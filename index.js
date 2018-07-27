@@ -130,12 +130,12 @@ playyes.addEventListener('click',()=>{
     sg.style.border = "0px";
     sg.style.outline="0px"
     let h3 = document.createElement('h3');
-    let t = document.createTextNode('Growth :');
+    let t = document.createTextNode('Growth :  ');
     h3.appendChild(t);
     h3.style.fontFamily ="'Fontdiner Swanky', cursive";
     sg1.appendChild(h3);
     h3 = document.createElement('h3');
-    t = document.createTextNode('Speed :');
+    t = document.createTextNode('Speed :  ');
     h3.appendChild(t);
     h3.style.fontFamily = "'Fontdiner Swanky', cursive";
     ss1.appendChild(h3);
