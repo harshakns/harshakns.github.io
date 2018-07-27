@@ -1,2 +1,3 @@
 # harshakns.github.io
-a test for hosting
+a snake game with options
+theme inspired by monokai.
