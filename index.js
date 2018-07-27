@@ -39,6 +39,8 @@ const presentScore = document.getElementById('presentScore');
 const coin = document.getElementById('coin');
 const wrong= document.getElementById('wrong');
 const error= document.getElementById('error');
+const sg1= document.getElementById('snakeGrowth1');
+const ss1= document.getElementById('snakeSpeed1');
 
 sg.addEventListener('change', () => snakeIncrement = Number(sg.value));
 ss.addEventListener('change',()=>snakeSpeed = Number(ss.value));
@@ -122,6 +124,25 @@ playyes.addEventListener('click',()=>{
     intro.style.zIndex=-2;
     addEventListenerForInputs();
     jump.play();
+
+    ss.style.border = "0px";
+    ss.style.outline="0px";
+    sg.style.border = "0px";
+    sg.style.outline="0px"
+    let h3 = document.createElement('h3');
+    let t = document.createTextNode('Growth :');
+    h3.appendChild(t);
+    h3.style.fontFamily ="'Fontdiner Swanky', cursive";
+    sg1.appendChild(h3);
+    h3 = document.createElement('h3');
+    t = document.createTextNode('Speed :');
+    h3.appendChild(t);
+    h3.style.fontFamily = "'Fontdiner Swanky', cursive";
+    ss1.appendChild(h3);
+
+    sg1.appendChild(sg);
+    ss1.appendChild(ss);
+
 });
 
 //adding event listner for retry button
